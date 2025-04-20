@@ -53,3 +53,13 @@
   background-color: #D32F2F; /* Red color */
   transform: translateY(-50%);
 }
+
+@keyframes rotate-border {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-rotate-border {
+  animation: rotate-border 4s linear infinite;
+}
+

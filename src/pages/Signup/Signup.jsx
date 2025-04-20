@@ -1,49 +1,48 @@
 import React from 'react'
 
 const Signup = () => {
-  return (
-    <div className="signup-container">
-      <h2 className='text-center bg-red-400'>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="username"
-          placeholder="Username"
-          value={formData.username}
-          onChange={handleInputChange}
-          required
-        />
-        <input
-          type="text"
-          name="number"
-          placeholder="Number"
-          value={formData.number}
-          onChange={handleInputChange}
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleInputChange}
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={handleInputChange}
-          required
-        />
-        <button type="submit">Register</button>
-      </form>
-      <p>
-        Already have an account? <span onClick={() => navigate('/login')}>Login</span>
-      </p>
-    </div>
-  )
+    return (
+        <div className="flex flex-col items-center justify-center h-screen bg-gray-300">
+            <div className="bg-white rounded-lg shadow-lg w-full max-w-lg">
+                <div className="flex flex-col items-center justify-center p-8 text-green-800">
+                    <span className="text-3xl font-semibold mb-4">Create Account</span>
+                    <label className="font-semibold text-xl self-start">Name</label>
+                    <input
+                        placeholder="Enter your name"
+                        type='name'
+                        className="border border-green-800 w-full pl-4 p-2 rounded-md text-base mt-2"
+                    />
+                    <label className="font-semibold text-xl self-start mt-2">Email</label>
+                    <input
+                        placeholder="Enter your email"
+                        type='email'
+                        className="border border-black w-full pl-4 p-2 rounded-md text-base mt-2"
+                    />
+                    <label className="font-semibold text-xl self-start mt-2">Mobile Number</label>
+                    <input
+                        placeholder="Enter your mob. no."
+                        type='number'
+                        className="border border-black w-full pl-4 p-2 rounded-md text-base mt-2"
+                    />
+                    <label className="font-semibold text-xl self-start mt-2">Password</label>
+                    <input
+                        placeholder="Enter your password"
+                        type='password'
+                        className="border border-black w-full pl-4 p-2 rounded-md text-base mt-2"
+                    />
+                    <label className="font-semibold text-xl self-start mt-2">Confirm Password</label>
+                    <input
+                        placeholder="Confirm your password"
+                        type='confirmpassword'
+                        className="border border-black w-full pl-4 p-2 rounded-md text-base mt-2"
+                    />
+                    <button type='submit' className='w-full mt-4 text-white bg-green-800 p-2 rounded-lg text-lg'>
+                        Sign Up
+                    </button>
+                </div>
+            </div>
+        </div>
+    )
 }
 
 export default Signup;
