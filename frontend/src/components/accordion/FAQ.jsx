@@ -3,7 +3,7 @@ import Accordion from './accordion';
 
 const FAQ = () => {
     return (
-        <div className="container p-4 sm:p-8 md:p-16 pb-6 sm:pb-8 bg-gray-300">
+        <div className="container w-full p-4 sm:p-8 md:p-16 pb-6 sm:pb-8 bg-gray-300">
             <div className="faqHeading font-semibold mb-4 sm:mb-8 flex justify-center text-2xl sm:text-3xl md:text-4xl">
                 FREQUENTLY ASKED QUESTIONS
             </div>

@@ -66,7 +66,7 @@ const Hero = ({ isOpen }) => {
 
   return (
     <>
-      <div className="container flex flex-col lg:flex-row pb-24 bg-gray-200">
+      <div className="container w-full flex flex-col lg:flex-row pb-24 bg-gray-200">
         <div className="container">
           <div className="card-container1 m-4 md:m-12 flex flex-wrap justify-center text-xl">
             <Link to={'/carhub/services'} className="w-1/2 sm:w-auto">

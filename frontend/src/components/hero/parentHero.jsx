@@ -107,7 +107,7 @@ const ParentHero = () => {
 
 
     return (
-        <section className="bg-green-50 -mt-12">
+        <section className="bg-green-50 mt-8 md:-mt-12">
             <div className="container mx-auto flex justify-center gap-8 lg:gap-24 text-center lg:pt-40 flex-wrap ">
                 {/* Car Service Card */}
                 <div

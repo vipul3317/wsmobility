@@ -149,7 +149,7 @@ const Brand = () => {
     }
     return (
         <section id='brands-id'>
-            <div className="parent-brand pt-8 pb-8 bg-gray-300">
+            <div className="w-full parent-brand pt-8 pb-8 bg-gray-300">
                 <div className="branddiv-part1 p-4 ">
                     <div className="heading-brand text-center text-black font-semibold text-4xl">
                         BRANDS WE SERVICE & REPAIR

@@ -93,7 +93,7 @@ const Hero2 = () => {
 
   return (
     <section id="work-flow-id">
-      <div className="container pt-4 md:pt-8 pb-4 md:pb-8 bg-gray-300">
+      <div className="container w-full pt-4 md:pt-8 pb-4 md:pb-8 bg-gray-300">
         <div className="working-heading p-2 md:p-4">
           <div className="heading-work text-center text-black font-bold text-2xl md:text-4xl">
             HOW IT WORKS

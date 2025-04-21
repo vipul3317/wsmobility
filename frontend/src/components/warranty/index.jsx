@@ -142,7 +142,7 @@ const Warranty = () => {
 
     return (
         <section id='warranty-id'>
-            <div className="parent-warranty pt-8 pb-8 bg-gray-200">
+            <div className="parent-warranty w-full pt-8 pb-8 bg-gray-200">
                 <div className="warrantydiv-part1 p-4">
                     <div className="heading-warranty text-center text-black font-semibold text-4xl">
                         OUR WARRANTY POLICY
