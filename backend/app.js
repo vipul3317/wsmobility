@@ -3,7 +3,7 @@ const app=express();
 const cors=require('cors');
 
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: process.env.REACT_APP_FRONTEND_URL,
     methods: ['GET', 'POST'],
     credentials: true,
   }));

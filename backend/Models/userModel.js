@@ -2,8 +2,8 @@ const mongoose=require('mongoose');
 const validation=require('email-validator');
 const bcrypt=require('bcrypt');
 const { default: parsePhoneNumberFromString } = require('libphonenumber-js');
-const dblink='mongodb+srv://hariomkumarkjh55:hariom123@usercluster.giuy1mg.mongodb.net/?retryWrites=true&w=majority&appName=userCluster';
-// NgRGO0UqFWIH8iUt
+const dblink=process.env.MONGODB_URI;
+
 const dbConnect= mongoose.connect(dblink)
 
 .then(()=>
