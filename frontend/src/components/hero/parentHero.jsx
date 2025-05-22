@@ -513,7 +513,7 @@ const ParentHero = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-semibold text-gray-800">Phone</h4>
-                                    <p className="text-gray-600">9470670833</p>
+                                    <p className="text-gray-600">+919470670833</p>
                                 </div>
                             </div>
 
