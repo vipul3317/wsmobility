@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import {
     Car,
+    Cpu,
+    Cog,
     Wrench,
     Clock,
     Users,
@@ -31,8 +33,19 @@ const ParentHero = () => {
         { id: 5, name: 'bike1', src: 'assets/bike-photos/5.png' },
         { id: 6, name: 'bike1', src: 'assets/bike-photos/6.png' },
         { id: 7, name: 'bike1', src: 'assets/bike-photos/7.png' },
-        
+
     ];
+
+    const [isVisible, setIsVisible] = useState(false);
+    const [hoveredCard, setHoveredCard] = useState(null);
+    const [scrollY, setScrollY] = useState(0);
+
+    useEffect(() => {
+        setIsVisible(true);
+        const handleScroll = () => setScrollY(window.scrollY);
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     useEffect(() => {
         const scrollCarousel = () => {
@@ -106,7 +119,7 @@ const ParentHero = () => {
 
 
     return (
-        <section className="bg-green-50 pt-36 lg:pt-8">
+        <section className="bg-green-100 pt-36 lg:pt-8">
             <div className="container mx-auto flex justify-center gap-8 lg:gap-24 text-center lg:pt-40 flex-wrap ">
                 {/* Car Service Card */}
                 <div
@@ -341,7 +354,7 @@ const ParentHero = () => {
       `}</style>
             </div>
 
-            <div className="overflow-hidden bg-green-50 mt-28 mb-32 ml-12 mr-12 lg:ml-32 lg:mr-32">
+            <div className="overflow-hidden bg-green-100 mt-28 mb-32 ml-12 mr-12 lg:ml-32 lg:mr-32">
                 <div
                     ref={carouselRef}
                     className="flex items-center overflow-x-hidden whitespace-nowrap"
@@ -369,131 +382,290 @@ const ParentHero = () => {
                 </div>
             </div>
 
-            <div id="aboutwsmobility" className="max-w-6xl mx-auto px-4">
-                <div className="text-center mb-12">
-                    <h2 className="text-4xl font-bold text-gray-800 mb-2">About Us</h2>
-                    <div className="w-44 h-1 bg-green-500 mx-auto mb-1"></div>
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2">Premium Services Since <span className="text-gray-600">2019</span></h3>
+            {/* aboutwsmobility */}
+            <div className="min-h-screen bg-gradient-to-br from-emerald-900 via-green-800 to-teal-900 relative overflow-hidden">
+                {/* Animated Background Elements */}
+                <div className="absolute inset-0 overflow-hidden">
+                    {/* Organic Flowing Shapes */}
+                    <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-green-400/20 to-emerald-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }}></div>
+                    <div className="absolute top-32 right-0 w-80 h-80 bg-gradient-to-bl from-teal-400/15 to-green-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s', animationDelay: '2s' }}></div>
+                    <div className="absolute bottom-0 left-1/3 w-72 h-72 bg-gradient-to-tr from-emerald-400/20 to-green-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s', animationDelay: '1s' }}></div>
+
+                    {/* Floating Elements */}
+                    <div className="absolute top-20 left-10 text-green-300 opacity-70" style={{ animation: 'floatUpDown 4s ease-in-out infinite' }}>
+                        <Car size={28} />
+                    </div>
+                    <div className="absolute top-40 right-20 text-emerald-300 opacity-60" style={{ animation: 'floatUpDown 5s ease-in-out infinite', animationDelay: '1s' }}>
+                        <Zap size={24} />
+                    </div>
+                    <div className="absolute bottom-40 left-20 text-teal-300 opacity-50" style={{ animation: 'floatUpDown 6s ease-in-out infinite', animationDelay: '2s' }}>
+                        <Cpu size={32} />
+                    </div>
+                    <div className="absolute top-60 right-40 text-green-400 opacity-40" style={{ animation: 'rotateFloat 8s linear infinite' }}>
+                        <Cog size={20} />
+                    </div>
+                    <div className="absolute bottom-60 left-1/2 text-emerald-400 opacity-50" style={{ animation: 'rotateFloat 10s linear infinite reverse' }}>
+                        <Cog size={24} />
+                    </div>
+
+                    {/* Moving Vehicle Trail */}
+                    <div className="absolute top-1/3 left-0 text-green-200 opacity-30">
+                        <div style={{ animation: 'moveAcross 20s linear infinite' }}>
+                            <div className="flex items-center space-x-3">
+                                <Car size={20} />
+                                <div className="flex space-x-1">
+                                    <div className="w-6 h-0.5 bg-green-300 rounded"></div>
+                                    <div className="w-4 h-0.5 bg-green-300 rounded opacity-70"></div>
+                                    <div className="w-3 h-0.5 bg-green-300 rounded opacity-50"></div>
+                                    <div className="w-2 h-0.5 bg-green-300 rounded opacity-30"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Decorative Lines */}
+                    <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-green-400/30 to-transparent opacity-60"></div>
+                    <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-emerald-400/20 to-transparent opacity-40" style={{ animationDelay: '3s' }}></div>
+
+                    {/* Particle Effects */}
+                    {Array.from({ length: 20 }).map((_, i) => (
+                        <div
+                            key={i}
+                            className="absolute w-1 h-1 bg-green-300 rounded-full opacity-40"
+                            style={{
+                                left: `${Math.random() * 100}%`,
+                                top: `${Math.random() * 100}%`,
+                                animation: `twinkle ${3 + Math.random() * 4}s ease-in-out infinite`,
+                                animationDelay: `${Math.random() * 5}s`
+                            }}
+                        ></div>
+                    ))}
                 </div>
 
-                <div className="flex flex-col gap-8 items-center">
-                    <div>
-                        <p className="font-bold text-green-700 mb-2 text-2xl underline">About WS Mobility Pvt. Ltd.</p>
-                        <p className="text-gray-600 mb-6 ">
-                            WS Mobility Pvt. Ltd. is a visionary startup founded with the mission to
-                            revolutionize the automobile industry in Bihar by offering a comprehensive,
-                            one-stop solution for all mobility needs. Our aim is to bridge the gap in the
-                            automotive service and sales sector, particularly in underdeveloped and emerging
-                            regions, by delivering high-quality, reliable, and sustainable services for cars, bikes, and electric vehicles (EVs).
-                        </p>
-                        <p className="text-gray-600 mb-6">
-                            We are proud to share that WS Mobility Pvt. Ltd. is officially approved by the Bihar Startups
-                            initiative, a recognition that reinforces our commitment to innovation, entrepreneurship, and regional development.
-                        </p>
-
-                        <div className="flex flex-col gap-4 mb-6">
-                            <div className="flex items-start">
-                                <div className="mr-4 mt-1 bg-green-100 p-2 rounded-full">
-                                    <Target size={20} className="text-green-600" />
-                                </div>
-                                <p className="text-lg font-semibold text-gray-800 mt-2">Our Vision</p>
-                            </div>
-                            <p className="text-gray-600">Our long-term vision is to establish WS Mobility Pvt. Ltd. as the leading
-                                integrated mobility platform in Bihar, catering to the diverse needs of vehicle owners and eco-conscious
-                                consumers. We strive to create an ecosystem that supports the present-day requirements of traditional
-                                automobile users while also driving the adoption of future-ready electric mobility solutions. Through our
-                                unified platform, we aspire to bring innovation, affordability, and sustainability to the forefront of
-                                Bihar's automobile industry.
-                            </p>
-                        </div>
-
-                        <div className="flex flex-col gap-4 mb-6">
-                            <div className="flex items-start">
-                                <div className="mr-4 mt-1 bg-green-100 p-2 rounded-full">
-                                    <Layers size={20} className="text-green-600" />
-                                </div>
-                                <p className="text-lg font-semibold text-gray-800 mt-2">Our Core Pillars</p>
-                            </div>
-                            <p className="text-gray-600">WS Mobility Pvt. Ltd. is built on four sustainable and synergistic business verticals:
-                            </p>
-                        </div>
-
-                        <div className="flex flex-col gap-2 mb-6 ml-4">
-                            <div className="flex items-start">
-                                <div className="mr-4 mt-1 bg-green-100 p-2 rounded-full">
-                                    <Car size={20} className="text-green-600" />
-                                </div>
-                                <p className="text-lg font-semibold text-gray-800 mt-2">CAR HUB</p>
-                            </div>
-                            <p className="text-gray-600 ml-12">A dedicated center for comprehensive car services, including maintenance, repairs,
-                                and diagnostics. CAR HUB ensures that car owners in Bihar receive premium quality services at affordable rates,
-                                backed by skilled professionals and cutting-edge technology.
-                            </p>
-                            <p className="ml-12"><a href="/carhub" className="text-blue-600">Click here</a><span> to visit the site</span></p>
-                        </div>
-
-                        <div className="flex flex-col gap-2 mb-6 ml-4">
-                            <div className="flex items-start">
-                                <div className="mr-4 mt-1 bg-green-100 p-2 rounded-full">
-                                    <Bike size={20} className="text-green-600" />
-                                </div>
-                                <p className="text-lg font-semibold text-gray-800 mt-2">Bikemen</p>
-                            </div>
-                            <p className="text-gray-600 ml-12">A specialized bike service vertical tailored to meet the needs of
-                                two-wheeler owners. From routine maintenance to emergency support, Bikemen delivers trustworthy and
-                                prompt service, ensuring customer satisfaction and vehicle longevity.
-
-                            </p>
-                            <p className="ml-12"><a href="/coming-soon" className="text-blue-600">Click here</a><span> to visit the site</span></p>
-                        </div>
-
-                        <div className="flex flex-col gap-2 mb-6 ml-4">
-                            <div className="flex items-start">
-                                <div className="mr-4 mt-1 bg-green-100 p-2 rounded-full">
-                                    <Bike size={20} className="text-green-600" />
-                                </div>
-                                <p className="text-lg font-semibold text-gray-800 mt-2">Electric Mobility Division (EV Division)
-                                </p>
-                            </div>
-                            <p className="text-gray-600 ml-12">Our Electric Mobility Division is dedicated to promoting eco-friendly
-                                 transportation by offering a wide range of high-quality electric bikes from multiple trusted brands. 
-                                 With a mission to make green mobility accessible to everyone, we provide competitively priced e-bikes 
-                                 that cater to various needs and preferences. What truly sets us apart is our 3-year continuous service 
-                                 promise for customers who join our electric mobility network-reflecting our commitment to long-term value, 
-                                 customer satisfaction, and sustainability.
-
-                            </p>
-                            <p className="ml-12"><a href="/coming-soon" className="text-blue-600">Click here</a><span> to visit the site</span></p>
-                        </div>
-
-                        <div className="flex flex-col gap-2 mb-6 ml-4">
-                            <div className="flex items-start">
-                                <div className="mr-4 mt-1 bg-green-100 p-2 rounded-full">
-                                    <Target size={20} className="text-green-600" />
-                                </div>
-                                <p className="text-lg font-semibold text-gray-800 mt-2">Future Mobility Services (Planned Expansion)
-                                </p>
-                            </div>
-                            <p className="text-gray-600 ml-12">As we grow, WS Mobility Pvt. Ltd. aims to introduce smart mobility services,
-                                such as electric vehicle rentals, shared mobility platforms, and rural transportation solutions, to further
-                                promote eco-conscious living and economic development across Bihar.
-
-                            </p>
-                        </div>
-
-
-                        <button className="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition duration-300">
-                            Learn More <ChevronRight size={16} className="ml-2" />
-                        </button>
+                <div id="aboutwsmobility" className="relative z-10 max-w-6xl mx-auto px-4 py-16">
+                    {/* Header Section */}
+                    <div className={`text-center mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                        <h2 className="text-5xl font-bold text-white mb-4 drop-shadow-lg">About Us</h2>
+                        <div className="w-48 h-1.5 bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 mx-auto mb-3 rounded-full shadow-lg shadow-green-400/50"></div>
+                        <h3 className="text-xl font-semibold text-green-100 mb-2">
+                            Premium Services Since <span className="text-green-300 font-bold">2019</span>
+                        </h3>
                     </div>
-                    <div className="md:w-1/2">
-                        <img
-                            src="assets/parentCompanyLogo1.png"
-                            alt="WS-mobility"
-                            className="rounded-lg shadow-lg w-full object-cover"
-                        />
+
+                    <div className="flex flex-col gap-8 items-center">
+                        {/* Main Content */}
+                        <div className={`w-full transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+
+                            {/* Company Introduction */}
+                            <div className="bg-white/95 backdrop-blur-lg rounded-3xl p-8 mb-8 shadow-2xl border border-green-200/50 hover:shadow-green-400/30 hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
+                                <p className="font-bold text-green-700 mb-2 text-2xl underline decoration-green-400">About WS Mobility Pvt. Ltd.</p>
+                                <p className="text-gray-700 mb-6 leading-relaxed text-lg">
+                                    WS Mobility Pvt. Ltd. is a visionary startup founded with the mission to
+                                    revolutionize the automobile industry in Bihar by offering a comprehensive,
+                                    one-stop solution for all mobility needs. Our aim is to bridge the gap in the
+                                    automotive service and sales sector, particularly in underdeveloped and emerging
+                                    regions, by delivering high-quality, reliable, and sustainable services for cars, bikes, and electric vehicles (EVs).
+                                </p>
+                                <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 border-l-4 border-green-400 shadow-inner">
+                                    <p className="text-gray-700 text-lg">
+                                        We are proud to share that WS Mobility Pvt. Ltd. is officially approved by the Bihar Startups
+                                        initiative, a recognition that reinforces our commitment to innovation, entrepreneurship, and regional development.
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Vision Section */}
+                            <div className={`bg-white/95 backdrop-blur-lg rounded-3xl p-8 mb-8 shadow-2xl border border-green-200/50 hover:shadow-green-400/30 hover:shadow-2xl transition-all duration-500 ${hoveredCard === 'vision' ? 'scale-105 rotate-1' : ''}`}
+                                onMouseEnter={() => setHoveredCard('vision')}
+                                onMouseLeave={() => setHoveredCard(null)}>
+                                <div className="flex flex-col gap-4 mb-6">
+                                    <div className="flex items-start">
+                                        <div className="mr-4 mt-1 bg-gradient-to-br from-green-400 to-emerald-500 p-4 rounded-full shadow-lg">
+                                            <Target size={28} className="text-white" />
+                                        </div>
+                                        <p className="text-2xl font-bold text-green-800 mt-2">Our Vision</p>
+                                    </div>
+                                    <p className="text-gray-700 leading-relaxed text-lg">
+                                        Our long-term vision is to establish WS Mobility Pvt. Ltd. as the leading
+                                        integrated mobility platform in Bihar, catering to the diverse needs of vehicle owners and eco-conscious
+                                        consumers. We strive to create an ecosystem that supports the present-day requirements of traditional
+                                        automobile users while also driving the adoption of future-ready electric mobility solutions. Through our
+                                        unified platform, we aspire to bring innovation, affordability, and sustainability to the forefront of
+                                        Bihar's automobile industry.
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Core Pillars Section */}
+                            <div className="bg-white/95 backdrop-blur-lg rounded-3xl p-8 mb-8 shadow-2xl border border-green-200/50">
+                                <div className="flex flex-col gap-4 mb-8">
+                                    <div className="flex items-start">
+                                        <div className="mr-4 mt-1 bg-gradient-to-br from-green-500 to-teal-500 p-4 rounded-full shadow-lg">
+                                            <Layers size={28} className="text-white" />
+                                        </div>
+                                        <p className="text-2xl font-bold text-green-800 mt-2">Our Core Pillars</p>
+                                    </div>
+                                    <p className="text-gray-700 text-lg">
+                                        WS Mobility Pvt. Ltd. is built on four sustainable and synergistic business verticals:
+                                    </p>
+                                </div>
+
+                                {/* Electric Mobility Division - FIRST */}
+                                <div className={`flex flex-col gap-2 mb-8 transition-all duration-500 ${hoveredCard === 'ev' ? 'transform translate-x-3 scale-105' : ''}`}
+                                    onMouseEnter={() => setHoveredCard('ev')}
+                                    onMouseLeave={() => setHoveredCard(null)}>
+                                    <div className="bg-gradient-to-br from-green-100 to-emerald-100 rounded-3xl p-8 border-2 border-green-300 shadow-xl hover:shadow-green-400/40 hover:shadow-2xl transition-all duration-300">
+                                        <div className="flex items-start">
+                                            <div className="mr-6 mt-1 bg-gradient-to-br from-green-500 to-emerald-600 p-4 rounded-full shadow-lg animate-pulse">
+                                                <Zap size={32} className="text-white" />
+                                            </div>
+                                            <p className="text-2xl font-bold text-green-800 mt-3">Electric Mobility Division (EV Division)</p>
+                                        </div>
+                                        <p className="text-gray-700 ml-16 mb-4 leading-relaxed text-lg">
+                                            Our Electric Mobility Division is dedicated to promoting eco-friendly
+                                            transportation by offering a wide range of high-quality electric bikes from multiple trusted brands.
+                                            With a mission to make green mobility accessible to everyone, we provide competitively priced e-bikes
+                                            that cater to various needs and preferences. What truly sets us apart is our 3-year continuous service
+                                            promise for customers who join our electric mobility network-reflecting our commitment to long-term value,
+                                            customer satisfaction, and sustainability.
+                                        </p>
+                                        <p className="ml-16">
+                                            <a href="/coming-soon" className="inline-flex items-center text-green-600 hover:text-green-700 font-semibold text-lg bg-white px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                                                Click here
+                                                <ChevronRight size={20} className="ml-2" />
+                                            </a>
+                                            <span className="text-gray-600 ml-3 text-lg">to visit the site</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* CAR HUB */}
+                                <div className={`flex flex-col gap-2 mb-8 transition-all duration-500 ${hoveredCard === 'carhub' ? 'transform translate-x-3 scale-[1.02]' : ''}`}
+                                    onMouseEnter={() => setHoveredCard('carhub')}
+                                    onMouseLeave={() => setHoveredCard(null)}>
+                                    <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 border border-blue-200 shadow-lg hover:shadow-blue-300/30 hover:shadow-xl transition-all duration-300">
+                                        <div className="flex items-start">
+                                            <div className="mr-6 mt-1 bg-gradient-to-br from-blue-500 to-cyan-500 p-4 rounded-full shadow-lg">
+                                                <Car size={32} className="text-white" />
+                                            </div>
+                                            <p className="text-2xl font-bold text-blue-800 mt-3">CAR HUB</p>
+                                        </div>
+                                        <p className="text-gray-700 ml-16 mb-4 leading-relaxed text-lg">
+                                            A dedicated center for comprehensive car services, including maintenance, repairs,
+                                            and diagnostics. CAR HUB ensures that car owners in Bihar receive premium quality services at affordable rates,
+                                            backed by skilled professionals and cutting-edge technology.
+                                        </p>
+                                        <p className="ml-16">
+                                            <a href="/carhub" className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold text-lg bg-white px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                                                Click here
+                                                <ChevronRight size={20} className="ml-2" />
+                                            </a>
+                                            <span className="text-gray-600 ml-3 text-lg">to visit the site</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* Bikemen */}
+                                <div className={`flex flex-col gap-2 mb-8 transition-all duration-500 ${hoveredCard === 'bikemen' ? 'transform translate-x-3 scale-[1.02]' : ''}`}
+                                    onMouseEnter={() => setHoveredCard('bikemen')}
+                                    onMouseLeave={() => setHoveredCard(null)}>
+                                    <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-3xl p-8 border border-purple-200 shadow-lg hover:shadow-purple-300/30 hover:shadow-xl transition-all duration-300">
+                                        <div className="flex items-start">
+                                            <div className="mr-6 mt-1 bg-gradient-to-br from-purple-500 to-indigo-500 p-4 rounded-full shadow-lg">
+                                                <Bike size={32} className="text-white" />
+                                            </div>
+                                            <p className="text-2xl font-bold text-purple-800 mt-3">Bikemen</p>
+                                        </div>
+                                        <p className="text-gray-700 ml-16 mb-4 leading-relaxed text-lg">
+                                            A specialized bike service vertical tailored to meet the needs of
+                                            two-wheeler owners. From routine maintenance to emergency support, Bikemen delivers trustworthy and
+                                            prompt service, ensuring customer satisfaction and vehicle longevity.
+                                        </p>
+                                        <p className="ml-16">
+                                            <a href="/coming-soon" className="inline-flex items-center text-purple-600 hover:text-purple-700 font-semibold text-lg bg-white px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                                                Click here
+                                                <ChevronRight size={20} className="ml-2" />
+                                            </a>
+                                            <span className="text-gray-600 ml-3 text-lg">to visit the site</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* Future Mobility Services */}
+                                <div className={`flex flex-col gap-2 mb-6 transition-all duration-500 ${hoveredCard === 'future' ? 'transform translate-x-3 scale-[1.02]' : ''}`}
+                                    onMouseEnter={() => setHoveredCard('future')}
+                                    onMouseLeave={() => setHoveredCard(null)}>
+                                    <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-3xl p-8 border border-orange-200 shadow-lg hover:shadow-orange-300/30 hover:shadow-xl transition-all duration-300">
+                                        <div className="flex items-start">
+                                            <div className="mr-6 mt-1 bg-gradient-to-br from-orange-500 to-amber-500 p-4 rounded-full shadow-lg">
+                                                <Target size={32} className="text-white" />
+                                            </div>
+                                            <p className="text-2xl font-bold text-orange-800 mt-3">Future Mobility Services (Planned Expansion)</p>
+                                        </div>
+                                        <p className="text-gray-700 ml-16 leading-relaxed text-lg">
+                                            As we grow, WS Mobility Pvt. Ltd. aims to introduce smart mobility services,
+                                            such as electric vehicle rentals, shared mobility platforms, and rural transportation solutions, to further
+                                            promote eco-conscious living and economic development across Bihar.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Call to Action */}
+                            <div className="text-center">
+                                <button className="inline-flex items-center px-12 py-5 bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 text-white text-xl font-semibold rounded-full hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 transition-all duration-300 transform hover:scale-110 hover:shadow-2xl shadow-lg border-2 border-green-300/50">
+                                    Learn More
+                                    <ChevronRight size={24} className="ml-3 transition-transform duration-300 group-hover:translate-x-2" />
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Company Logo/Image */}
+                        <div className={`md:w-1/2 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                            <div className="relative group">
+                                <div className="absolute inset-0 bg-gradient-to-r from-green-400/40 to-emerald-400/40 rounded-3xl blur-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-500"></div>
+                                <div className="relative bg-white/95 backdrop-blur-sm rounded-3xl p-6 shadow-2xl border-2 border-green-200/50">
+                                    <img
+                                        src="assets/parentCompanyLogo1.png"
+                                        alt="WS-mobility"
+                                        className="rounded-2xl shadow-xl w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105"
+                                        style={{
+                                            filter: 'drop-shadow(0 15px 30px rgba(34, 197, 94, 0.4))'
+                                        }}
+                                    />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                {/* Enhanced Custom CSS for animations */}
+                <style jsx>{`
+        @keyframes moveAcross {
+          0% { transform: translateX(-150px); opacity: 0; }
+          15% { opacity: 1; }
+          85% { opacity: 1; }
+          100% { transform: translateX(calc(100vw + 150px)); opacity: 0; }
+        }
+        
+        @keyframes floatUpDown {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          25% { transform: translateY(-15px) rotate(3deg); }
+          50% { transform: translateY(-8px) rotate(-2deg); }
+          75% { transform: translateY(-20px) rotate(2deg); }
+        }
+        
+        @keyframes rotateFloat {
+          0% { transform: rotate(0deg) translateY(0px); }
+          50% { transform: rotate(180deg) translateY(-10px); }
+          100% { transform: rotate(360deg) translateY(0px); }
+        }
+        
+        @keyframes twinkle {
+          0%, 100% { opacity: 0.2; transform: scale(0.8); }
+          50% { opacity: 0.8; transform: scale(1.2); }
+        }
+      `}</style>
             </div>
 
             <div id="contactSection" className="max-w-6xl mx-auto px-4">
@@ -547,7 +719,7 @@ const ParentHero = () => {
                                 <div>
                                     <h4 className="font-semibold text-gray-800">Business Hours</h4>
                                     <p className="text-gray-600">Sat-Thu: 9AM - 7PM</p>
-                                    
+
                                     <p className="text-gray-600">Fri: Closed</p>
                                 </div>
                             </div>
@@ -584,8 +756,8 @@ const ParentHero = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-semibold text-gray-800">Location</h4>
-                                    <p className="text-gray-600">Mitu Palace-202, Near PNB bank,<br/> Chitragupta Nagar, Kanti Factory<br/> Rd,
-                                        Kankarbagh, Patna,<br/> Bihar-800026</p>
+                                    <p className="text-gray-600">Mitu Palace-202, Near PNB bank,<br /> Chitragupta Nagar, Kanti Factory<br /> Rd,
+                                        Kankarbagh, Patna,<br /> Bihar-800026</p>
                                     <a href="" className="underline  text-blue-500">see on map</a>
                                 </div>
                             </div>
@@ -597,7 +769,7 @@ const ParentHero = () => {
                                 <div>
                                     <h4 className="font-semibold text-gray-800">Business Hours</h4>
                                     <p className="text-gray-600">Mon-Sun: 9AM - 7PM</p>
-                                    
+
                                 </div>
                             </div>
                         </div>
