@@ -105,7 +105,7 @@ const BikeModels = ({ bikes }) => {
                                             <img
                                                 src={bike.imageUrl || `/api/placeholder/500/400`}
                                                 alt={bike.name}
-                                                className="w-full h-80 object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500"
+                                                className="w-full h-64 object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500"
                                             />
 
                                             {/* Overlay Badge */}
