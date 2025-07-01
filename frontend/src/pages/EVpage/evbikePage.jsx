@@ -33,7 +33,7 @@ const EvbikePage = () => {
 
   const [bikes, setBikes] = useState([]);
   useEffect(() => {
-    axios.get('http://localhost:5000/api/bikes/getbikemodels')
+    axios.get('https://wsmobility-backend.onrender.com/api/bikes/getbikemodels')
       .then(res => {
         console.log("API response:", res.data);
         setBikes(res.data);
