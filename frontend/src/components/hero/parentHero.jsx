@@ -696,7 +696,7 @@ const ParentHero = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-semibold text-gray-800">Email</h4>
-                                    <p className="text-gray-600">carhub@wsmobility.in</p>
+                                    <p className="text-gray-600">carhubpatna01@gmail.com</p>
                                 </div>
                             </div>
 
@@ -746,7 +746,7 @@ const ParentHero = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-semibold text-gray-800">Email</h4>
-                                    <p className="text-gray-600">ebikes@wsmobility.in</p>
+                                    <p className="text-gray-600">info@wsmobility.in</p>
                                 </div>
                             </div>
 
@@ -795,7 +795,7 @@ const ParentHero = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-semibold text-gray-800">Email</h4>
-                                    <p className="text-gray-600">bikemen@wsmobility.in</p>
+                                    <p className="text-gray-600">info@wsmobility.in</p>
                                 </div>
                             </div>
 

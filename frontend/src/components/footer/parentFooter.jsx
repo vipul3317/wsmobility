@@ -141,7 +141,7 @@ const ParentFooter = () => {
                 <div className="mr-4 bg-green-100 p-2 rounded-full">
                   <Mail size={18} className="text-green-600" />
                 </div>
-                <p className="text-gray-600">contact@wsmobility.in</p>
+                <p className="text-gray-600">info@wsmobility.in</p>
               </li>
               <li className="flex items-start">
                 <div className="mr-4 mt-1 bg-green-100 p-2 rounded-full">
