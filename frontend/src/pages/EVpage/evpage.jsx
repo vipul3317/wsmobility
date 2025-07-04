@@ -3,8 +3,8 @@ import { ChevronLeft, ChevronRight, TrendingUp, Target, DollarSign, Award, Megap
 import { useNavigate } from 'react-router-dom';
 
 const EVLandingPage = () => {
-    const navigate=useNavigate();
-    const handleExploreClick=()=>{
+    const navigate = useNavigate();
+    const handleExploreClick = () => {
         navigate('/evbikemodels');
     }
     const [activeModel, setActiveModel] = useState(0);
@@ -272,9 +272,9 @@ const EVLandingPage = () => {
                         {/* Logo */}
                         <a href="/" className="flex items-center">
                             <img
-                                src="assets/parentCompanyLogo.jpg"
+                                src="assets/parentCompanyLogo1.png"
                                 alt="ws-mob-logo"
-                                style={{ width: 130, height: 80 }}
+                                style={{ width: 120, height: 110 }}
                             />
                         </a>
 
@@ -341,24 +341,37 @@ const EVLandingPage = () => {
             </nav>
 
             {/* Hero Section */}
-            <section className="pt-40 pb-12 bg-gradient-to-br from-green-50 to-blue-50">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <section
+                style={{
+                    backgroundImage: "url('assets/bg-bike.jpeg')",
+                    height: "100vh",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center ",
+                    backgroundRepeat: "no-repeat"
+                }}
+                className="pt-40 bg-green-100 relative z-0"
+            >
+
+                <div className="absolute inset-0 bg-black bg-opacity-55 z-10"></div>
+
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
                     <div className="text-center mb-12">
-                        <h1 className="text-7xl md:text-7xl font-bold text-gray-900 mb-4">
+                        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.2rem] font-bold text-white mb-4">
                             <span className="block">The Future.</span>
-                            <span className="block text-green-600">Is Electric.</span>
+                            <span className="block text-[#32CD32]">Is Electric.</span>
                             <span className="block">Is Here.</span>
                         </h1>
-                        <p className="text-2xl text-gray-600 max-w-3xl mx-auto mb-8">
-                            Join India's fastest-growing electric vehicle brand. Exclusive dealership opportunities with attractive margins and comprehensive support.
+                        <p className="text-lg sm:text-xl md:text-2xl text-white max-w-3xl mx-auto mb-8 px-4">
+                            Join India's fastest-growing electric vehicle brand. <br/>Exclusive dealership opportunities with attractive margins and comprehensive support.
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button className="px-8 py-3 text-lg bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-semibold">
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
+                            <button className="px-6 sm:px-8 py-3 text-base sm:text-lg bg-[#2EB82E] text-white rounded-lg hover:bg-green-700 transition-colors font-semibold">
                                 Apply For Dealership
                             </button>
                             <button
-                            onClick={handleExploreClick}
-                             className="px-8 py-3 text-lg border border-green-600 text-green-600 rounded-lg hover:bg-green-50 transition-colors font-semibold">
+                                onClick={handleExploreClick}
+                                className="px-6 sm:px-8 py-3 text-base sm:text-lg border border-green-700 text-green-700 bg-white bg-opacity-90 rounded-lg hover:bg-opacity-100 transition-colors font-semibold"
+                            >
                                 View Models
                             </button>
                         </div>
@@ -537,7 +550,7 @@ const EVLandingPage = () => {
                                 <div className="relative inline-block">
                                     <div className="absolute inset-0 bg-gradient-to-r from-green-200/30 to-emerald-200/30 rounded-full blur-lg transform scale-110"></div>
                                     <button
-                                    onClick={handleExploreClick}
+                                        onClick={handleExploreClick}
                                         className="relative group bg-gradient-to-r from-green-600 to-emerald-600 text-white px-10 py-5 rounded-full font-bold text-xl hover:from-green-700 hover:to-emerald-700 transform hover:scale-105 transition-all duration-500 shadow-xl border border-white/20 flex items-center gap-4"
                                     >
                                         <span className="relative">

@@ -48,9 +48,9 @@ const EvbikePage = () => {
             {/* Logo */}
             <a href="/" className="flex items-center">
               <img
-                src="assets/parentCompanyLogo.jpg"
+                src="assets/parentCompanyLogo1.png"
                 alt="ws-mob-logo"
-                style={{ width: 130, height: 80 }}
+                style={{ width: 120, height: 110 }}
               />
             </a>
 

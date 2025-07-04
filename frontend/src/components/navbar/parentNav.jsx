@@ -33,11 +33,11 @@ const ParentNav = () => {
   return (
     <div className="bg-white shadow-md w-full fixed top-0 left-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
-        <div className="flex justify-between h-24">
+        <div className="flex justify-between h-20">
           {/* Logo and brand name */}
           <div className="flex items-center">
             <a href="/" className="flex items-center">
-              <img style={{width:130, height:80}} src='assets/parentCompanyLogo.jpg' alt='ws-mob-logo'/>
+              <img style={{width:120, height:120}} src='assets/parentCompanyLogo1.png' alt='ws-mob-logo'/>
             </a>
           </div>
           
