@@ -146,7 +146,7 @@ const StandardService = () => {
                                     <span className='ml-1'>Rear Brake Shoes Cleaning</span>
                                 </div>
                                 <div className="strikethrough-red price-not-app mt-16 text-5xl font-bold">
-                                    Rs.10000
+                                    Rs.3999
                                 </div>
                             </div>
                         </div>
@@ -158,7 +158,7 @@ const StandardService = () => {
                         <br />
                         <span className='text-white text-lg'>WHEN YOU BOOK TODAY</span>
                         <br />
-                        <span className='text-white text-lg block mt-4'>Now at <span className='text-yellow-300 text-4xl'>Rs.8999</span></span>
+                        <span className='text-white text-lg block mt-4'>Now at <span className='text-yellow-300 text-4xl'>Rs.4999</span></span>
 
                         <div className="container flex flex-wrap justify-center gap-2 mt-5">
                             <div className="block">

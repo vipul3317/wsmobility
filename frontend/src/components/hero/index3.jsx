@@ -127,7 +127,7 @@ const MajorService = () => {
                                 </span>
                                 <br />
                                 <CheckIcon style={{ color: 'green' }} />
-                                <span className='ml-1'>AFront Brake Pads Serviced
+                                <span className='ml-1'>Front Brake Pads Serviced
                                 </span>
                                 <br />
                                 <CheckIcon style={{ color: 'green' }} />
@@ -172,7 +172,7 @@ const MajorService = () => {
                         <br />
                         <span className='text-white text-xl'>WHEN YOU BOOK TODAY</span>
                         <br />
-                        <span className='text-white text-xl block mt-4'>Now at <span className='text-yellow-300 text-5xl'>Rs.9999</span></span>
+                        <span className='text-white text-xl block mt-4'>Now at <span className='text-yellow-300 text-5xl'>Rs.4999</span></span>
 
                         <div className="container flex flex-wrap justify-center gap-2 mt-5">
                             <div className="block">

@@ -105,10 +105,6 @@ const BasicService = () => {
                                 </span>
                                 <br />
                                 <CheckIcon style={{ color: 'green' }} />
-                                <span className='ml-1'>Coolant Top Up (200 ml)
-                                </span>
-                                <br />
-                                <CheckIcon style={{ color: 'green' }} />
                                 <span className='ml-1'>Battery Water Top-Up
                                 </span>
                                 <br />
@@ -149,7 +145,7 @@ const BasicService = () => {
                         <br />
                         <span className='text-white text-lg'>WHEN YOU BOOK TODAY</span>
                         <br />
-                        <span className='text-white text-lg block mt-4'>Now at <span className='text-yellow-300 text-4xl'>Rs.7999</span></span>
+                        <span className='text-white text-lg block mt-4'>Now at <span className='text-yellow-300 text-4xl'>Rs.2999</span></span>
 
                         <div className="container flex flex-wrap justify-center gap-2 mt-5">
                             <div className="block">

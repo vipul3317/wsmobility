@@ -36,7 +36,7 @@ const RoadSideAssistance = () => {
             title: 'Car Lockout Service',
             description: 'Help when you\'re locked out of your vehicle',
             timeEstimate: '25 min',
-            price: 'Rs.5999',
+            price: 'Rs.1499',
             image: '/assets/serviceModel/carLockout.png'
         },
         {
@@ -45,7 +45,7 @@ const RoadSideAssistance = () => {
             title: 'Flat Tyre Change',
             description: 'Professional tire change on the spot',
             timeEstimate: '20 min',
-            price: 'Rs.4999',
+            price: 'Rs.999',
             image: '/assets/serviceModel/cartyre3d.png'
         },
         {
@@ -54,7 +54,7 @@ const RoadSideAssistance = () => {
             title: 'Car Recovery And Towing Service',
             description: 'Safe and reliable towing to your preferred location',
             timeEstimate: '30 min',
-            price: 'Rs.4999',
+            price: 'Rs.699',
             image: '/assets/serviceModel/carTowing.png'
         },
         {
