@@ -231,7 +231,7 @@ const ParentHero = () => {
                                     href="/carhub"
                                     className={`inline-flex items-center transition-all border border-x-4 duration-500 bg-white/20 hover:bg-white/30 backdrop-blur-md px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-gray-900 font-medium text-sm sm:text-base ${hoverCar ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-80'}`}
                                 >
-                                    <span className="font-bold">Visit CARHUB</span>
+                                    <span className="font-bold">Visit WS Car Service</span>
                                     <ChevronRight size={14} className="ml-2 sm:w-4 sm:h-4" />
                                 </a>
                             </div>
@@ -560,11 +560,11 @@ const ParentHero = () => {
                                             <div className="mr-3 md:mr-4 lg:mr-6 mt-1 bg-gradient-to-br from-blue-500 to-cyan-500 p-2 md:p-3 lg:p-4 rounded-full shadow-lg">
                                                 <Car size={20} className="md:w-6 md:h-6 lg:w-8 lg:h-8 text-white" />
                                             </div>
-                                            <p className="text-base md:text-lg lg:text-2xl font-bold text-blue-800 mt-1 md:mt-2 lg:mt-3">CAR HUB</p>
+                                            <p className="text-base md:text-lg lg:text-2xl font-bold text-blue-800 mt-1 md:mt-2 lg:mt-3">WS Car Service</p>
                                         </div>
                                         <p className="text-gray-700 ml-8 md:ml-12 lg:ml-16 mb-3 md:mb-4 leading-relaxed text-sm md:text-base lg:text-lg">
                                             A dedicated center for comprehensive car services, including maintenance, repairs,
-                                            and diagnostics. CAR HUB ensures that car owners in Bihar receive premium quality services at affordable rates,
+                                            and diagnostics.WS Car Service ensures that car owners in Bihar receive premium quality services at affordable rates,
                                             backed by skilled professionals and cutting-edge technology.
                                         </p>
                                         <p className="ml-8 md:ml-12 lg:ml-16">
@@ -690,7 +690,7 @@ const ParentHero = () => {
 
                 <div className="flex flex-col lg:flex-row gap-8 justify-center pb-16">
                     <div className="bg-white rounded-lg shadow-md p-6 pr-12">
-                        <h3 className="text-center font-bold p-1 bg-yellow-400 rounded-xl text-lg">CAR HUB</h3>
+                        <h3 className="text-center font-bold p-1 bg-yellow-400 rounded-xl text-lg">WS Car Service</h3>
                         <h3 className="text-xl font-semibold text-gray-800 mb-4 mt-4">Get In Touch</h3>
                         <div className="space-y-4">
                             <div className="flex items-start">
